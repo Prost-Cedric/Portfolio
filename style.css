@@ -112,6 +112,10 @@ table.vlan tr:hover td{background:rgba(0,188,212,.04)}
 .hero-purple{background:linear-gradient(135deg,#1a0b3a 0%,#0f0620 40%,#0a0e14 100%);padding:4rem 3rem 3rem;position:relative;overflow:hidden}
 .hero-purple::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);pointer-events:none}
 
+/* PROCEDURE BUTTON */
+.proc-link{display:inline-block;background:var(--cyan);color:#0a0e14;text-decoration:none;font-weight:600;font-size:.95rem;padding:.75rem 1.75rem;border-radius:20px;transition:all .2s ease;box-shadow:0 2px 12px rgba(0,188,212,0.2)}
+.proc-link:hover{background:var(--cyan-dark);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,188,212,0.35)}
+
 /* RESPONSIVE */
 @media(max-width:640px){
   .doc-grid{grid-template-columns:1fr}

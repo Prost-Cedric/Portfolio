@@ -1,0 +1,20 @@
+collections,type,name,notes,fields,reprompt,login_uri,login_username,login_password,login_totp
+Mot de passe,login,ADDC1,,,0,,Administrateur,AdmInnovatech@2025!,
+Mot de passe,login,DSRM,,,0,,,AdmInnovatech@2025!,
+Mot de passe,login,GLPI,,,0,,root,AdmInnovatech@2025!,
+Mot de passe,login,Intranet,"pour se connecter à la vm 
+ca marche aussi intranet",,0,,root,AdmInnovatech@2025!,
+Mot de passe,login,MDP ROUTEUR et SWITCHS,,,0,,admin,Vo&VQf2oRmis,
+Mot de passe,login,Proxmox MDP,,,0,https://172.16.100.1:8006/,root,AdmInnovatech@2025!,
+Mot de passe,login,"STORMSHIELD ",,,0,,admin,Ob^4@fSYc!10UR2g,
+Mot de passe,login,Utilisateur SQL GLPI,,,0,,glpi_adm,AdmInnovatech@2025!,
+Mot de passe,login,ZABBIX,"interface zabbix : 172.16.100.105/zabbix/
+mdp root différents du mdp zabbix
+
+
+Et le compte de l'interface c'est Admin avec le même mdp qu'en haut.
+
+
+ATTENTION 
+pour le mot de passe de la VM c'est le mdp de l'AD
+Et login root",,0,,Admin,AYYZNizcj3m3,

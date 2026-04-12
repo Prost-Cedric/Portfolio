@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Procédures GNEX – Prost Cedric Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .folder-tree {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .folder-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border-bright);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+
+  .folder-block:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 0 20px rgba(0,188,212,0.1);
+  }
+
+  .folder-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-bright);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .folder-icon {
+    color: var(--cyan);
+    font-size: 1rem;
+  }
+
+  .subfolder-name {
+    font-size: 0.75rem;
+    color: var(--cyan);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+
+  .subfolder-name:first-child {
+    margin-top: 0;
+  }
+
+  .file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .file-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s, color 0.2s;
+  }
+
+  .file-item:hover {
+    border-color: var(--cyan);
+    background: rgba(0,188,212,0.05);
+    transform: translateX(4px);
+    color: var(--text);
+  }
+
+  .file-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .file-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .file-name {
+    flex: 1;
+    font-weight: 400;
+  }
+
+  .file-arrow {
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    transition: color 0.2s;
+  }
+
+  .file-item:hover .file-arrow {
+    color: var(--cyan);
+  }
+
+  .back-button {
+    display: inline-block;
+    background: var(--cyan);
+    color: #0a0e14;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .back-button:hover {
+    background: var(--cyan-dark);
+    transform: translateY(-2px);
+  }
+
+  @media(max-width:640px){
+    .folder-block {
+      padding: 1.25rem 1rem;
+    }
+    .folder-name {
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">IS</div>
+    <span>Innovatech Solutions</span>
+  </a>
+  <div class="nav-tabs">
+    <a class="tab-link" href="index.html">Présentation</a>
+    <a class="tab-link" href="entreprise.html">Entreprise</a>
+    <a class="tab-link active" href="projet.html">Projet</a>
+    <a class="tab-link" href="veille.html">Veille Technologique</a>
+  </div>
+</nav>
+
+<div class="page-content">
+  <div class="hero-purple">
+    <div class="hero-name" style="font-size:clamp(2rem,5vw,3.5rem)">Procédures<br><em>GNEX</em></div>
+    <div class="hero-tag" style="color:var(--purple-light)">Documentation technique complète</div>
+    <div class="hero-sub">Toutes les procédures réseau, système et sécurité ainsi que les documents administratifs du projet GNEX.</div>
+  </div>
+
+  <div class="content">
+    <a href="projet.html" class="back-button">← Retour au projet</a>
+
+    <h2 class="sec-title">Documentation GNEX</h2>
+    <p class="prose">Retrouvez ci-dessous toute la documentation technique du projet GNEX, organisée par catégorie : procédures réseau, système, sécurité et documents administratifs.</p>
+
+    <div class="folder-tree">
+
+    <!-- ============================
+         ADMINISTRATIF
+         ============================ -->
+    <div class="folder-block">
+      <div class="folder-name"><span class="folder-icon">&#128193;</span> Administratif</div>
+      <div class="file-list">
+        <a href="Proc%C3%A9dures%20GENEX/Administratif/Consigne_GNEX.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Consigne GNEX</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Administratif/DAT_Gnex_InnovaTech.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">DAT Gnex InnovaTech</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Administratif/Gantt%20InnovaTechSolutions.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Gantt InnovaTech Solutions</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Administratif/Gnex%20Innovatech%20Reponse%20d%27appel%20d%27offre.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Réponse d'appel d'offre - Gnex InnovaTech</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Administratif/INNOVATECH%20SOLUTION%20DEX%20(2).pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">InnovaTech Solution DEX</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Administratif/devis%20DEV-2025-0001%20GENEX-2.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Devis DEV-2025-0001 GENEX</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Administratif/Analyse%20de%20risque%20Gnex%20Ebios%2012-02-2026.docx" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="#1d4ed8">DOC</text></svg></span>
+          <span class="file-name">Analyse de risque Gnex Ebios</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Administratif/GNEX.drawio" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fde68a" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="4.5" font-weight="700" fill="#d97706">DRW</text></svg></span>
+          <span class="file-name">Schéma réseau GNEX (drawio)</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ============================
+         PROCÉDURES
+         ============================ -->
+    <div class="folder-block">
+      <div class="folder-name"><span class="folder-icon">&#128193;</span> Procédures</div>
+
+      <!-- Cartouche -->
+      <div class="file-list" style="margin-bottom:18px">
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Cartouche%20Documentation.docx" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="#1d4ed8">DOC</text></svg></span>
+          <span class="file-name">Cartouche Documentation (modèle)</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Réseau -->
+      <div class="subfolder-name"><span class="folder-icon">&#128194;</span> Réseau</div>
+      <div class="file-list">
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Reseau/PROCEDURE%20CONNEXION%20SSH%20(valid%C3%A9).pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Procédure Connexion SSH</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Reseau/Procedure%20Reseau%20Creation%20VLAN%20Switch%20L2-L3(valid%C3%A9).pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Création VLAN Switch L2-L3</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Reseau/Procedure%20Reseau%20MDP%20L2%20Routeur(valid%C3%A9).pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">MDP L2 Routeur</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Reseau/Procedure%20Reseau%20Upgrade%20Version%20IOS%20Switch%20L2%20CISCO%20(valid%C3%A9).pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Upgrade Version IOS Switch L2 Cisco</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Reseau/Procedure%20Reseaux%20Routage%20Inter-VLAN(valid%C3%A9).pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Routage Inter-VLAN</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Reseau/Procedure%20R%C3%A9seau%20Protocole%20VTP%20Switch%20L2%20(valid%C3%A9).pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Protocole VTP Switch L2</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Reseau/Procedure%20R%C3%A9seaux%20Mise%20ne%20place%20SSH%20Switch%20L2%20(valid%C3%A9).pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Mise en place SSH Switch L2</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Reseau/Proc%C3%A9dure%20Attribution%20d%27un%20vlan%20sur%20un%20port%20switch%20L2(valid%C3%A9).pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Attribution d'un VLAN sur un port Switch L2</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Reseau/Configuration%20DHCP%20dans%20routeur%20et%20L3.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Configuration DHCP dans Routeur et L3</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Reseau/Memo%20DNS.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Memo DNS</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Reseau/Procedure%20Syst%C3%A8me%20Sauvegrade%20Configuration%20Storm.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Sauvegarde Configuration Stormshield</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Stormshield -->
+      <div class="subfolder-name"><span class="folder-icon">&#128194;</span> Stormshield</div>
+      <div class="file-list">
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/STORMSHIELD/Proc%C3%A9dure%20Stormshield%20routage%20et%20NAT.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Stormshield - Routage et NAT</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/STORMSHIELD/Stormshield%20Configuration%20Interfaces.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Stormshield - Configuration Interfaces</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/STORMSHIELD/Changer%20de%20MDP%20Sur%20le%20Stormshield%20(valid%C3%A9).pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Changer de MDP sur le Stormshield</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- GLPI -->
+      <div class="subfolder-name"><span class="folder-icon">&#128194;</span> GLPI</div>
+      <div class="file-list">
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/GLPI/Assistance%20GLPI.docx" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="#1d4ed8">DOC</text></svg></span>
+          <span class="file-name">Assistance GLPI</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/GLPI/Creation%20entit%C3%A9%20GLPI.docx" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="#1d4ed8">DOC</text></svg></span>
+          <span class="file-name">Création entité GLPI</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/GLPI/Cr%C3%A9ation%20et%20modification%20de%20groupes%20GLPI.docx" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="#1d4ed8">DOC</text></svg></span>
+          <span class="file-name">Création et modification de groupes GLPI</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/GLPI/Cr%C3%A9ation%20et%20modification%20des%20droits%20d%E2%80%99acc%C3%A8s%20d%E2%80%99un%20profil%20GLPI.docx" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="#1d4ed8">DOC</text></svg></span>
+          <span class="file-name">Création et modification des droits d’accès d’un profil GLPI</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/GLPI/Inventaire%20GLPI.docx" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="#1d4ed8">DOC</text></svg></span>
+          <span class="file-name">Inventaire GLPI</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/GLPI/Modification%20profil%20GLPI.docx" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="#1d4ed8">DOC</text></svg></span>
+          <span class="file-name">Modification profil GLPI</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/GLPI/Profil%20GLPI.docx" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="#1d4ed8">DOC</text></svg></span>
+          <span class="file-name">Profil GLPI</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Système -->
+      <div class="subfolder-name"><span class="folder-icon">&#128194;</span> Système</div>
+      <div class="file-list">
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Syst%C3%A8me/Charger%20les%20pilotes%20Cr%C3%A9ation%20de%20VM%20win%20Serv%202025.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Charger les pilotes - Création de VM Win Serv 2025</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Syst%C3%A8me/Cr%C3%A9ation%20AD%20avec%20Controleur%20de%20Domaine.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Création AD avec Contrôleur de Domaine</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Syst%C3%A8me/Cr%C3%A9ation%20Strat%C3%A9gie%20DHCP.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Création Stratégie DHCP</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Syst%C3%A8me/Cr%C3%A9ation%20r%C3%A8gle%20etendue%20DHCP.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Création règle étendue DHCP</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Syst%C3%A8me/Proc%C3%A9dure%20groupe%20Serveur%20de%20Fichier.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Procédure groupe Serveur de Fichiers</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Syst%C3%A8me/Proc%C3%A9dure%20zabbix(2).docx" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="700" fill="#1d4ed8">DOC</text></svg></span>
+          <span class="file-name">Procédure Zabbix</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Syst%C3%A8me/Installation%20agent%20Zabbix%20sur%20VM%20.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Installation agent Zabbix sur VM</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Syst%C3%A8me/Remonter%20les%20VM%20sur%20Zabbix.pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Remonter les VM sur Zabbix</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+        <a href="Proc%C3%A9dures%20GENEX/Proc%C3%A9dure/Syst%C3%A8me/Procedure%20Syst%C3%A8me%20si%20Reset%20et%20Sauvegarde%20Configuration%20Storm%20(valid%C3%A9).pdf" target="_blank" class="file-item">
+          <span class="file-icon"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3a2 2 0 012-2h10l8 8v18a2 2 0 01-2 2H8a2 2 0 01-2-2V3z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><path d="M18 1v6a2 2 0 002 2h6" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/><text x="13" y="23" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#dc2626">PDF</text></svg></span>
+          <span class="file-name">Reset et Sauvegarde Configuration Stormshield</span>
+          <span class="file-arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

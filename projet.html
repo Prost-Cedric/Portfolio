@@ -107,37 +107,12 @@
       <span class="chip">Analyse de risque EBIOS (Février 2026)</span>
     </div>
 
-    <!-- DOCUMENTS -->
-    <h2 class="sec-title">Documents</h2>
-    <p class="prose" style="margin-bottom:1rem">Déposez vos documents dans les catégories correspondantes :</p>
-    <div class="doc-grid">
-      <div class="doc-card">
-        <label for="doc-admin">
-          <h5>Administratif</h5>
-          <p>EBIOS Février · Réponse d'appel d'offre · GANTT</p>
-          <div style="margin-top:.8rem;padding:.3rem .8rem;border:1px dashed var(--cyan);border-radius:8px;font-size:.75rem;color:var(--cyan)">+ Ajouter un fichier</div>
-        </label>
-        <input type="file" id="doc-admin" onchange="handleFile(this,'doc-admin-list')">
-        <div id="doc-admin-list" style="margin-top:.5rem;font-size:.75rem;color:var(--text-muted)"></div>
-      </div>
-      <div class="doc-card">
-        <label for="doc-reseau">
-          <h5>Réseau</h5>
-          <p>Plans réseau · Configs VTP/VLAN · Documentation Cisco</p>
-          <div style="margin-top:.8rem;padding:.3rem .8rem;border:1px dashed var(--cyan);border-radius:8px;font-size:.75rem;color:var(--cyan)">+ Ajouter un fichier</div>
-        </label>
-        <input type="file" id="doc-reseau" onchange="handleFile(this,'doc-reseau-list')">
-        <div id="doc-reseau-list" style="margin-top:.5rem;font-size:.75rem;color:var(--text-muted)"></div>
-      </div>
-      <div class="doc-card">
-        <label for="doc-systeme">
-          <h5>Système</h5>
-          <p>Scripts PowerShell · Config AD · Proxmox · RAID</p>
-          <div style="margin-top:.8rem;padding:.3rem .8rem;border:1px dashed var(--cyan);border-radius:8px;font-size:.75rem;color:var(--cyan)">+ Ajouter un fichier</div>
-        </label>
-        <input type="file" id="doc-systeme" onchange="handleFile(this,'doc-systeme-list')">
-        <div id="doc-systeme-list" style="margin-top:.5rem;font-size:.75rem;color:var(--text-muted)"></div>
-      </div>
+  
+    <!-- PROCÉDURES COMPLÈTES -->
+    <div style="margin:2.5rem 0;padding:1.75rem 1.75rem;background:linear-gradient(135deg,rgba(124,58,237,0.08) 0%,rgba(0,188,212,0.08) 100%);border:1px solid;border-image:linear-gradient(135deg,var(--purple-light),var(--cyan)) 1;border-radius:12px">
+      <h2 class="sec-title" style="border:none;padding:0;margin:0 0 1rem 0">Toutes les procédures GNEX</h2>
+      <p class="prose" style="margin-bottom:1.5rem">Documentation complète et organisée de toutes les procédures réseau, système, sécurité et documents administratifs du projet GNEX.</p>
+      <a href="procedures-gnex.html" class="proc-link">Accéder à la documentation complète →</a>
     </div>
 
     <!-- PROBLÈME -->
