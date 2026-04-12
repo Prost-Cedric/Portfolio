@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veille Technologique – Prost Cedric Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">IS</div>
+    <span>Innovatech Solutions</span>
+  </a>
+  <div class="nav-tabs">
+    <a class="tab-link" href="index.html">Présentation</a>
+    <a class="tab-link" href="entreprise.html">Entreprise</a>
+    <a class="tab-link" href="projet.html">Projet</a>
+    <a class="tab-link active" href="veille.html">Veille Technologique</a>
+  </div>
+</nav>
+
+<div class="page-content">
+  <div class="hero">
+    <div style="font-size:.8rem;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem">Veille Technologique</div>
+    <div class="hero-name" style="font-size:clamp(2rem,4vw,3rem)">Fortinet</div>
+    <div class="hero-tag">Firewall · Patch · Intelligence Artificielle</div>
+    <div class="hero-sub">Suivi de l'actualité Fortinet – firewalls, vulnérabilités, correctifs et intégration de l'IA dans la cybersécurité réseau.</div>
+  </div>
+
+  <div class="content">
+    <h2 class="sec-title">Résumé entreprise</h2>
+    <p class="prose">Fortinet est une entreprise de cybersécurité basée en Californie (USA), elle est fondée dans les années 2000. Elle opère principalement dans la vente d'équipements de sécurité informatique comprenant des firewalls, solution cloud, endpoints, contrôle d'accès et des services client tels que de l'analyse et gestion du trafic réseau.</p>
+    <p class="prose" style="margin-top:.5rem">J'ai choisi ce sujet car lorsque je travaillais à LDLC, nous étions en partenariat avec Fortinet et cela m'a aussi permis de me tenir informé des dernières actualités des firewalls, leurs failles et ce qui était principalement visé par les hackeurs. Cette veille m'a aussi tenu informé de l'implémentation de l'IA dans la sécurité réseau ainsi que de découvrir d'autres manières que les hackeurs utilisent pour hacker, à quel point nous commençons à l'intégrer dans nos vies, notre travail, et à quel point nous lui faisons inconsciemment confiance.</p>
+
+    <div style="height:2rem"></div>
+
+    <div class="watch-grid">
+      <div class="watch-card">
+        <span class="tag">Patch</span>
+        <h3>Vulnérabilités CVE – Zero-Day</h3>
+        <p>Fortinet a déclaré plusieurs CVE. Deux de ces CVE provenaient d'une faille Zero-Day qui permet de contourner l'authentification. Il y a aussi eu une faille sur les équipements Fortiswitch qui permet de modifier le MDP Admin à distance.</p>
+      </div>
+      <div class="watch-card">
+        <span class="tag">Firewall</span>
+        <h3>FortiGate – NGFW</h3>
+        <p>Les firewalls Fortinet (FortiGate) rentrent dans la catégorie des NGFW (New Generation FireWall). Ils possèdent leur propre OS (FortiOS), ils fabriquent leur propre puce qui permet de maximiser les performances et d'offrir le meilleur ratio prix/performances possible. Les firewalls exploitent aussi l'IA grâce à leur service FortiGuard.</p>
+      </div>
+      <div class="watch-card">
+        <span class="tag">Intelligence Artificielle</span>
+        <h3>Fortinet & l'IA</h3>
+        <p>Fortinet s'est aussi lancé dans l'IA spécifiquement dans la sécurisation du réseau, des logs, la protection de l'architecture. Il aide les analystes, leur donne des conseils et fait des résumés des incidents. Il aide aussi à la détection des menaces inconnues (Zéro et attaque utilisant l'IA).</p>
+      </div>
+      <div class="watch-card">
+        <span class="tag">Incident</span>
+        <h3>Firewalls compromis en France</h3>
+        <p>Fortinet a publié le 10 avril 2025 un billet de blogue indiquant l'utilisation d'une technique de post-exploitation qui permet une atteinte à la confidentialité des données de l'ensemble du système des équipements Fortigate affectés, via un lien symbolique déposé sur le système à la suite d'une compromission de l'équipement.</p>
+      </div>
+      <div class="watch-card">
+        <span class="tag">DLP</span>
+        <h3>FortiDLP – Premier produit DLP autonome</h3>
+        <p>Fortinet lance son premier produit DLP autonome pour les points d'extrémité. Le système déploie l'apprentissage machine au niveau des terminaux, ce qui permet une surveillance continue des données sans connectivité réseau permanente. FortiAI contextualise automatiquement l'activité des employés.</p>
+      </div>
+      <div class="watch-card">
+        <span class="tag">Mon choix</span>
+        <h3>Pourquoi Fortinet ?</h3>
+        <p>Dans cette veille, je suis l'actualité de Fortinet principalement les éléments cités ci-dessus. Ce sujet m'a aussi fait m'interroger sur l'utilisation de l'IA, à quel point nous commençons à l'intégrer dans nos vies, notre travail, et à quel point nous lui faisons inconsciemment confiance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span class="ticker-item"><span>🔴</span>CVE Fortinet – Zero-Day contournement authentification</span>
+      <span class="ticker-item"><span>🔵</span>FortiGate NGFW – proprietary chip & FortiOS</span>
+      <span class="ticker-item"><span>🟢</span>FortiDLP – premier produit DLP autonome pour endpoints</span>
+      <span class="ticker-item"><span>🟡</span>Firewalls Fortinet compromis en France – lien symbolique SSL VPN</span>
+      <span class="ticker-item"><span>🔴</span>Fortiswitch – faille MDP Admin modification à distance</span>
+      <span class="ticker-item"><span>🔵</span>FortiGuard – IA intégrée dans la détection de menaces</span>
+      <span class="ticker-item"><span>🟢</span>FortiAI – contextualisation activité employés en temps réel</span>
+      <span class="ticker-item"><span>🟡</span>CERT-FR – alerte firewalls Fortigate affectés en France</span>
+      <span class="ticker-item"><span>🔴</span>CVE Fortinet – Zero-Day contournement authentification</span>
+      <span class="ticker-item"><span>🔵</span>FortiGate NGFW – proprietary chip & FortiOS</span>
+      <span class="ticker-item"><span>🟢</span>FortiDLP – premier produit DLP autonome pour endpoints</span>
+      <span class="ticker-item"><span>🟡</span>Firewalls Fortinet compromis en France – lien symbolique SSL VPN</span>
+      <span class="ticker-item"><span>🔴</span>Fortiswitch – faille MDP Admin modification à distance</span>
+      <span class="ticker-item"><span>🔵</span>FortiGuard – IA intégrée dans la détection de menaces</span>
+      <span class="ticker-item"><span>🟢</span>FortiAI – contextualisation activité employés en temps réel</span>
+      <span class="ticker-item"><span>🟡</span>CERT-FR – alerte firewalls Fortigate affectés en France</span>
+    </div>
+  </div>
+
+  <div style="padding:2rem 2rem 1rem;max-width:1100px;margin:0 auto">
+    <h2 class="sec-title">Articles récents</h2>
+    <table class="vlan" style="margin-top:1rem">
+      <thead><tr><th>Date</th><th>Titre</th><th>Source</th><th>Catégorie</th></tr></thead>
+      <tbody>
+        <tr><td>Avril 2025</td><td>Firewalls Fortinet compromis en France malgré les correctifs</td><td>CERT-FR / IT-CONNECT</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">Incident</span></td></tr>
+        <tr><td>2025</td><td>Fortinet lance FortiDLP – DLP autonome pour endpoints</td><td>Forti DLP</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">Produit</span></td></tr>
+        <tr><td>2025</td><td>CVE Zero-Day – Contournement authentification Fortinet</td><td>Fortinet</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">Patch</span></td></tr>
+        <tr><td>2025</td><td>Faille Fortiswitch – Modification MDP Admin à distance</td><td>Fortinet</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">Patch</span></td></tr>
+        <tr><td>2024–2025</td><td>FortiAI – Détection de menaces et résumés incidents</td><td>Fortinet</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">IA</span></td></tr>
+        <tr><td>2024</td><td>FortiGate NGFW – puce propriétaire et performances</td><td>Fortinet</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">Firewall</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

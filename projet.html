@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projet GNEX – Prost Cedric Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">IS</div>
+    <span>Innovatech Solutions</span>
+  </a>
+  <div class="nav-tabs">
+    <a class="tab-link" href="index.html">Présentation</a>
+    <a class="tab-link" href="entreprise.html">Entreprise</a>
+    <a class="tab-link active" href="projet.html">Projet</a>
+    <a class="tab-link" href="veille.html">Veille Technologique</a>
+  </div>
+</nav>
+
+<div class="page-content">
+  <div class="hero-purple">
+    <div class="hero-name" style="font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900">GNEX</div>
+    <div class="hero-tag" style="color:var(--purple-light)">Projet d'infrastructure réseau & système</div>
+    <div class="hero-sub">Mise en place d'une infrastructure réseau moderne, sécurisée et redondante pour une entreprise spécialisée dans les technologies liées aux jeux vidéo.</div>
+  </div>
+
+  <div class="content">
+    <h2 class="sec-title">Description du projet</h2>
+    <p class="prose">L'entreprise GNEX, fondée en 2020 par Nathan Lambert et Élise Martin, est spécialisée dans les technologies liées aux jeux vidéo et aux infrastructures réseau pour le gaming en ligne. L'entreprise développe également des solutions éducatives basées sur les jeux vidéo et des technologies avancées comme l'intelligence artificielle et la réalité virtuelle.</p>
+    <div class="infra-list">
+      <span class="infra-badge">2 sites (Sophia Antipolis + Paris/Saint-Denis)</span>
+      <span class="infra-badge">~300 employés</span>
+      <span class="infra-badge">Infrastructure redondante</span>
+    </div>
+
+    <h2 class="sec-title" style="margin-top:2.5rem">Ressources nécessaires</h2>
+
+    <div class="inner-tabs" id="res-tabs">
+      <button class="inner-tab active" onclick="showRes('materiel')">Matériel</button>
+      <button class="inner-tab" onclick="showRes('reseau')">Réseau</button>
+      <button class="inner-tab" onclick="showRes('systeme')">Système</button>
+    </div>
+
+    <div id="res-materiel" class="res-panel">
+      <div class="infra-list">
+        <span class="infra-badge">1 Stormshield</span>
+        <span class="infra-badge">1 Routeur</span>
+        <span class="infra-badge">1 Switch L3</span>
+        <span class="infra-badge">2 Switchs L2</span>
+        <span class="infra-badge">2 Serveurs</span>
+      </div>
+      <p class="prose" style="margin-top:1rem">Tous les équipements sont en liens doublés pour la redondance. Le serveur possède 6 disques : 2 NVMe en RAID avec Proxmox d'installé et 4 HDD avec toutes les VMs installées avec un RAID 5.</p>
+    </div>
+    <div id="res-reseau" class="res-panel" style="display:none">
+      <table class="vlan">
+        <thead><tr><th>VLAN</th><th>Service</th></tr></thead>
+        <tbody>
+          <tr><td>10</td><td>Réseau / Système</td></tr>
+          <tr><td>20</td><td>Direction</td></tr>
+          <tr><td>30</td><td>RH</td></tr>
+          <tr><td>40</td><td>Comptabilité</td></tr>
+          <tr><td>50</td><td>R&D</td></tr>
+          <tr><td>60</td><td>Commercial</td></tr>
+          <tr><td>70</td><td>Hardware</td></tr>
+          <tr><td>100</td><td>Datacenter</td></tr>
+          <tr><td>150</td><td>Visiteurs</td></tr>
+          <tr><td>200</td><td>Démo</td></tr>
+          <tr><td>300</td><td>Serveurs</td></tr>
+          <tr><td>400</td><td>Sortie Internet</td></tr>
+        </tbody>
+      </table>
+      <p class="prose">13 VLAN – Tous les VLAN ont accès au VLAN Serveurs et VLAN Sortie Internet. Le VLAN Visiteurs a uniquement accès au DNS, DHCP et Internet.</p>
+    </div>
+    <div id="res-systeme" class="res-panel" style="display:none">
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot" style="background:var(--purple-light)"></div><div class="tl-content"><h5>2 VM Active Directory / LDAP</h5><p>Gestion des utilisateurs avec mirroring (ADDC1 + ADDC2 pour la redondance)</p></div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:var(--purple-light)"></div><div class="tl-content"><h5>1 VM DHCP</h5><p>Distribution IP</p></div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:var(--purple-light)"></div><div class="tl-content"><h5>1 VM DNS</h5><p>Résolution de noms</p></div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:var(--purple-light)"></div><div class="tl-content"><h5>1 VM Serveur Mailemails</h5><p>Messagerie interne</p></div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:var(--purple-light)"></div><div class="tl-content"><h5>1 VM Serveur fichiers stockage</h5><p>Partage de fichiers et stockage</p></div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:var(--purple-light)"></div><div class="tl-content"><h5>Serveur Intranet</h5><p>Communication interne</p></div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:var(--purple-light)"></div><div class="tl-content"><h5>1 VM Applications métiers</h5><p>Applications métiers GLPI</p></div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:var(--purple-light)"></div><div class="tl-content"><h5>1 VM Supervision – ZABBIX</h5><p>Surveillance réseau</p></div></div>
+      </div>
+      <p class="prose">Toutes les VMs sont sur un serveur avec PROXMOX comme hyperviseur.</p>
+    </div>
+
+    <!-- TÂCHES -->
+    <h2 class="sec-title" style="margin-top:2.5rem">Tâches effectuées</h2>
+    <p class="prose">Sur ce projet, suite aux tâches que nous nous sommes réparties avec le GANTT, j'ai effectué pas mal de choses différentes :</p>
+    <div class="chips" style="margin-bottom:1.5rem">
+      <span class="chip highlight">VTP</span>
+      <span class="chip highlight">SSH</span>
+      <span class="chip highlight">Création de VLAN</span>
+      <span class="chip highlight">Installation Proxmox</span>
+      <span class="chip highlight">RAID 5</span>
+      <span class="chip highlight">VM ADDC1 &amp; ADDC2</span>
+      <span class="chip highlight">Serveur de fichiers</span>
+      <span class="chip highlight">Groupes AD</span>
+      <span class="chip highlight">Tiering AD</span>
+      <span class="chip highlight">Script PS – 300 utilisateurs</span>
+      <span class="chip">Réponse d'appel d'offre</span>
+      <span class="chip">Analyse de risque EBIOS (Février 2026)</span>
+    </div>
+
+    <!-- DOCUMENTS -->
+    <h2 class="sec-title">Documents</h2>
+    <p class="prose" style="margin-bottom:1rem">Déposez vos documents dans les catégories correspondantes :</p>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <label for="doc-admin">
+          <div class="doc-icon">📋</div>
+          <h5>Administratif</h5>
+          <p>EBIOS Février · Réponse d'appel d'offre · GANTT</p>
+          <div style="margin-top:.8rem;padding:.3rem .8rem;border:1px dashed var(--cyan);border-radius:8px;font-size:.75rem;color:var(--cyan)">+ Ajouter un fichier</div>
+        </label>
+        <input type="file" id="doc-admin" onchange="handleFile(this,'doc-admin-list')">
+        <div id="doc-admin-list" style="margin-top:.5rem;font-size:.75rem;color:var(--text-muted)"></div>
+      </div>
+      <div class="doc-card">
+        <label for="doc-reseau">
+          <div class="doc-icon">🌐</div>
+          <h5>Réseau</h5>
+          <p>Plans réseau · Configs VTP/VLAN · Documentation Cisco</p>
+          <div style="margin-top:.8rem;padding:.3rem .8rem;border:1px dashed var(--cyan);border-radius:8px;font-size:.75rem;color:var(--cyan)">+ Ajouter un fichier</div>
+        </label>
+        <input type="file" id="doc-reseau" onchange="handleFile(this,'doc-reseau-list')">
+        <div id="doc-reseau-list" style="margin-top:.5rem;font-size:.75rem;color:var(--text-muted)"></div>
+      </div>
+      <div class="doc-card">
+        <label for="doc-systeme">
+          <div class="doc-icon">🖥️</div>
+          <h5>Système</h5>
+          <p>Scripts PowerShell · Config AD · Proxmox · RAID</p>
+          <div style="margin-top:.8rem;padding:.3rem .8rem;border:1px dashed var(--cyan);border-radius:8px;font-size:.75rem;color:var(--cyan)">+ Ajouter un fichier</div>
+        </label>
+        <input type="file" id="doc-systeme" onchange="handleFile(this,'doc-systeme-list')">
+        <div id="doc-systeme-list" style="margin-top:.5rem;font-size:.75rem;color:var(--text-muted)"></div>
+      </div>
+    </div>
+
+    <!-- PROBLÈME -->
+    <h2 class="sec-title" style="margin-top:2.5rem">Problème encouru</h2>
+    <div class="alert">
+      <h4>Corruption du rôle RID Master – Active Directory</h4>
+      <p>Lors de l'implémentation du script PowerShell visant à créer 300 utilisateurs, nous avions réalisé un snapshot de l'AD 1 par mesure de sécurité, afin de pouvoir revenir en arrière en cas d'incident. Cependant, la liste de noms et prénoms étant insuffisante, nous avons décidé d'exploiter ce snapshot à des fins de test et de validation.</p>
+      <p style="margin-top:.8rem">L'AD 1 étant synchronisé avec l'AD 2, et ce dernier n'ayant pas été arrêté avant la restauration du snapshot, cela a entraîné une corruption du rôle RID Master. Lors de l'installation du service de messagerie, plusieurs erreurs sont apparues, conduisant à identifier cette corruption comme cause principale.</p>
+      <p style="margin-top:.8rem">La réparation du RID Master étant extrêmement complexe, voire impossible dans ce contexte, nous avons été contraints de supprimer les deux contrôleurs de domaine AD 1 et AD 2, la corruption s'étant propagée via la synchronisation.</p>
+      <p style="margin-top:.8rem;color:var(--orange-light);font-weight:500">✓ Leçon retenue : Toujours isoler un contrôleur de domaine (désactiver la réplication ou éteindre les autres DC) avant de restaurer un snapshot. Privilégier les sauvegardes système Windows Server Backup plutôt que les snapshots pour Active Directory.</p>
+    </div>
+
+    <!-- SERVICES ÉVALUATION -->
+    <h2 class="sec-title" style="margin-top:2.5rem">Services choisis pour l'évaluation</h2>
+    <div class="cards">
+      <div class="card" style="border-color:var(--cyan)">
+        <div class="card-icon">🖥️</div>
+        <h4>Service Système</h4>
+        <p>Installation et configuration de Proxmox, mise en place des VMs Active Directory (ADDC1 & ADDC2) avec redondance, serveur de fichiers, création des groupes et utilisateurs AD via script PowerShell.</p>
+      </div>
+      <div class="card" style="border-color:var(--purple-light)">
+        <div class="card-icon">🌐</div>
+        <h4>Service Réseau</h4>
+        <p>Mise en place de VTP, création et configuration des VLANs sur les équipements Cisco, configuration SSH, segmentation réseau complète et redondance des liens.</p>
+      </div>
+    </div>
+
+    <!-- OUTILS UTILISÉS PROJET -->
+    <h2 class="sec-title" style="margin-top:2.5rem">Outils & Technologies utilisés</h2>
+    <div class="logo-grid">
+      <div class="logo-item"><span class="abbr">PVE</span>Proxmox</div>
+      <div class="logo-item"><span class="abbr">HV</span>Hyper-V</div>
+      <div class="logo-item"><span class="abbr">ZBX</span>Zabbix</div>
+      <div class="logo-item"><span class="abbr">HAD</span>Harden AD</div>
+      <div class="logo-item"><span class="abbr">CSC</span>Cisco</div>
+      <div class="logo-item"><span class="abbr">WS</span>Win Server 2025</div>
+      <div class="logo-item"><span class="abbr">LNX</span>Linux</div>
+      <div class="logo-item"><span class="abbr">STM</span>Stormshield</div>
+      <div class="logo-item"><span class="abbr">RDM</span>RD Manager</div>
+      <div class="logo-item"><span class="abbr">PTY</span>PuTTY</div>
+      <div class="logo-item"><span class="abbr">EX</span>Exchange</div>
+      <div class="logo-item"><span class="abbr">GLP</span>GLPI</div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
