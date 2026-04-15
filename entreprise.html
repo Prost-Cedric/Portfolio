@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entreprise – Prost Cedric Portfolio</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .ldlc-link{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.25rem;color:var(--cyan);font-size:.9rem;font-weight:500;text-decoration:none;border:1px solid rgba(0,188,212,.3);padding:.45rem 1.1rem;border-radius:20px;transition:all .2s}
+  .ldlc-link:hover{background:rgba(0,188,212,.1);border-color:var(--cyan)}
+  .tool-title-link{color:#fff;text-decoration:none;transition:color .2s;display:inline-flex;align-items:center;gap:.4rem}
+  .tool-title-link:hover{color:var(--cyan)}
+  .tool-title-link svg{opacity:.5;transition:opacity .2s;flex-shrink:0}
+  .tool-title-link:hover svg{opacity:1}
+</style>
 </head>
 <body>
 
@@ -31,6 +39,10 @@
   <div class="content">
     <h2 class="sec-title">Présentation de l'entreprise</h2>
     <p class="prose">LDLC Nice Grimaldi est une franchise de la structure LDLC. On y fait de la vente, réparation, montage, dépannage d'ordinateurs. On conseille aussi les clients pour des PC personnalisés adaptés à leurs besoins et à leur budget.</p>
+    <a href="https://www.ldlc.com/magasin/nice-grimaldi/" target="_blank" rel="noopener" class="ldlc-link">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      Visiter LDLC Nice Grimaldi
+    </a>
 
     <div style="height:2rem"></div>
 
@@ -119,6 +131,8 @@
     </div>
 
     <div style="height:2rem"></div>
+
+    <!-- OUTILS -->
     <h2 class="sec-title">Application outils utilisés</h2>
     <div id="tool-tabs" style="margin:1.5rem 0">
       <div class="inner-tabs">
@@ -130,7 +144,12 @@
         <button class="inner-tab" onclick="showTool(5)">PC3000</button>
       </div>
       <div id="tool-desc" class="card" style="border-radius:12px;border-color:var(--cyan)">
-        <h4 id="tool-name" style="font-size:1rem;margin-bottom:.5rem">HWMonitor</h4>
+        <h4 style="font-size:1rem;margin-bottom:.4rem">
+          <a id="tool-name-link" href="https://www.cpuid.com/softwares/hwmonitor.html" target="_blank" rel="noopener" class="tool-title-link">
+            <span id="tool-name">HWMonitor</span>
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </h4>
         <p id="tool-text">Outil de surveillance permettant de contrôler en temps réel les températures, tensions et fréquences du CPU, GPU, RAM et autres composants.</p>
       </div>
     </div>

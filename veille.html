@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Veille Technologique – Prost Cedric Portfolio</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .article-link{color:inherit;text-decoration:none;display:block}
+  .watch-card a.article-link h3{transition:color .2s}
+  .watch-card:hover a.article-link h3{color:var(--cyan)}
+  table.vlan td a{color:var(--text-muted);text-decoration:none;transition:color .2s}
+  table.vlan td a:hover{color:var(--cyan);text-decoration:underline}
+  .fortinet-link{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.25rem;color:var(--cyan);font-size:.9rem;font-weight:500;text-decoration:none;border:1px solid rgba(0,188,212,.3);padding:.45rem 1.1rem;border-radius:20px;transition:all .2s}
+  .fortinet-link:hover{background:rgba(0,188,212,.1);border-color:var(--cyan)}
+  .date-badge{font-size:.75rem;color:var(--text-dim);margin-bottom:.4rem;display:block}
+  .tag-row{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.6rem}
+</style>
 </head>
 <body>
 
@@ -32,75 +43,338 @@
   <div class="content">
     <h2 class="sec-title">Résumé entreprise</h2>
     <p class="prose">Fortinet est une entreprise de cybersécurité basée en Californie (USA), elle est fondée dans les années 2000. Elle opère principalement dans la vente d'équipements de sécurité informatique comprenant des firewalls, solution cloud, endpoints, contrôle d'accès et des services client tels que de l'analyse et gestion du trafic réseau.</p>
-    <div style="height:2rem"></div>
+    <a href="https://www.fortinet.com/fr" target="_blank" rel="noopener" class="fortinet-link">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      Visiter le site officiel Fortinet
+    </a>
+
+    <div style="height:2.5rem"></div>
 
     <div class="watch-grid">
+
       <div class="watch-card">
-        <span class="tag">Patch</span>
-        <h3>Vulnérabilités CVE – Zero-Day</h3>
-        <p>Fortinet a déclaré plusieurs CVE. Deux de ces CVE provenaient d'une faille Zero-Day qui permet de contourner l'authentification. Il y a aussi eu une faille sur les équipements Fortiswitch qui permet de modifier le MDP Admin à distance.</p>
+        <div class="tag-row">
+          <span class="tag">Patch</span>
+          <span class="date-badge">25/10/2024</span>
+        </div>
+        <a href="https://www.it-connect.fr/fortinet-patchez-fortimanager-faille-zero-day-cve-2024-47575/" target="_blank" rel="noopener" class="article-link">
+          <h3>Fortinet : patchez FortiManager dès maintenant pour vous protéger d'une faille zero-day (CVE-2024-47575)</h3>
+        </a>
+        <p>Vulnérabilité critique dans FortiManager permettant à des attaquants non authentifiés d'exécuter du code à distance. Patch immédiat recommandé.</p>
       </div>
+
       <div class="watch-card">
-        <span class="tag">Firewall</span>
-        <h3>FortiGate – NGFW</h3>
-        <p>Les firewalls Fortinet (FortiGate) rentrent dans la catégorie des NGFW (New Generation FireWall). Ils possèdent leur propre OS (FortiOS), ils fabriquent leur propre puce qui permet de maximiser les performances et d'offrir le meilleur ratio prix/performances possible. Les firewalls exploitent aussi l'IA grâce à leur service FortiGuard.</p>
+        <div class="tag-row">
+          <span class="tag">Patch</span>
+          <td><span class="tag" style="padding:.15rem .5rem;font-size:.73rem;background:rgba(232,93,4,.15);border-color:rgba(232,93,4,.3);color:var(--orange-light)">Important</span></td>
+          <span class="date-badge">25/10/2024</span>
+        </div>
+        <a href="https://www.it-connect.fr/fortinet-faille-fortijump-exploitee-depuis-juin-2024/" target="_blank" rel="noopener" class="article-link">
+          <h3>Fortinet : la faille de sécurité FortiJump est exploitée par les pirates depuis juin 2024 !</h3>
+        </a>
+        <p>Exploitation active de FortiJump documentée depuis juin 2024. Risque élevé pour les équipements FortiManager exposés.</p>
       </div>
+
       <div class="watch-card">
-        <span class="tag">Intelligence Artificielle</span>
-        <h3>Fortinet & l'IA</h3>
-        <p>Fortinet s'est aussi lancé dans l'IA spécifiquement dans la sécurisation du réseau, des logs, la protection de l'architecture. Il aide les analystes, leur donne des conseils et fait des résumés des incidents. Il aide aussi à la détection des menaces inconnues (Zéro et attaque utilisant l'IA).</p>
+        <div class="tag-row">
+          <span class="tag">DLP</span>
+          <span class="date-badge">04/11/2024</span>
+        </div>
+        <a href="https://www.lemond.informatique.fr/actualites/lire-fortinet-lance-son-premier-dlp-autonome-pour-les-points-d-extremite-95149.html" target="_blank" rel="noopener" class="article-link">
+          <h3>Fortinet lance son premier produit DLP autonome pour les points d'extrémité</h3>
+        </a>
+        <p>FortiDLP déploie l'apprentissage machine au niveau des terminaux pour une surveillance continue des données, même sans connectivité réseau permanente.</p>
       </div>
+
       <div class="watch-card">
-        <span class="tag">Incident</span>
-        <h3>Firewalls compromis en France</h3>
-        <p>Fortinet a publié le 10 avril 2025 un billet de blogue indiquant l'utilisation d'une technique de post-exploitation qui permet une atteinte à la confidentialité des données de l'ensemble du système des équipements Fortigate affectés, via un lien symbolique déposé sur le système à la suite d'une compromission de l'équipement.</p>
+        <div class="tag-row">
+          <span class="tag">Patch</span>
+          <td><span class="tag" style="padding:.15rem .5rem;font-size:.73rem;background:rgba(232,93,4,.15);border-color:rgba(232,93,4,.3);color:var(--orange-light)">Important</span></td>
+          <span class="date-badge">14/01/2025</span>
+        </div>
+        <a href="https://www.it-connect.fr/fortinet-faille-critique-contourner-lauthentification-cve-2024-55591/" target="_blank" rel="noopener" class="article-link">
+          <h3>Des firewalls Fortinet piratés avec cette faille critique permettant de contourner l'authentification !</h3>
+        </a>
+        <p>Faille Zero-Day permettant de contourner l'authentification sur FortiOS et FortiProxy. Exploitation active détectée dans la nature.</p>
       </div>
+
       <div class="watch-card">
-        <span class="tag">DLP</span>
-        <h3>FortiDLP – Premier produit DLP autonome</h3>
-        <p>Fortinet lance son premier produit DLP autonome pour les points d'extrémité. Le système déploie l'apprentissage machine au niveau des terminaux, ce qui permet une surveillance continue des données sans connectivité réseau permanente. FortiAI contextualise automatiquement l'activité des employés.</p>
+        <div class="tag-row">
+          <span class="tag">Patch</span>
+          <td><span class="tag" style="padding:.15rem .5rem;font-size:.73rem;background:rgba(232,93,4,.15);border-color:rgba(232,93,4,.3);color:var(--orange-light)">Important</span></td>
+          <span class="date-badge">12/02/2025</span>
+        </div>
+        <a href="https://ccb.belgium.be/advisories/warning-fortinet-patched-multiple-vulnerabilities-one-vulnerability-already-actively" target="_blank" rel="noopener" class="article-link">
+          <h3>Fortinet a corrigé plusieurs vulnérabilités, l'une d'elles est déjà exploitée, passez le correctif immédiatement.</h3>
+        </a>
+        <p>Correction de multiples CVE dont une déjà exploitée activement. Application immédiate des correctifs fortement conseillée.</p>
       </div>
+
       <div class="watch-card">
-        <span class="tag">Mon choix</span>
+        <div class="tag-row">
+          <span class="tag">IA</span>
+          <span class="date-badge">24/02/2025</span>
+        </div>
+        <a href="https://www.lemondeinformatique.fr/actualites/lire-avec-l-ia-fortianalyzer-muscle-la-detection-des-menaces-96132.html" target="_blank" rel="noopener" class="article-link">
+          <h3>Avec l'IA FortiAnalyzer muscle la détection des menaces</h3>
+        </a>
+        <p>L'IA est intégrée dans FortiAnalyzer pour aider les analystes, faire des résumés d'incidents et détecter les menaces inconnues, y compris les attaques Zero-Day assistées par IA.</p>
+      </div>
+
+      <div class="watch-card">
+        <div class="tag-row">
+          <span class="tag">Incident</span>
+          <span class="date-badge">14/03/2025</span>
+        </div>
+        <a href="https://www.securityweek.com/recent-fortinet-vulnerabilities-exploited-in-superblack-ransomware-attacks/" target="_blank" rel="noopener" class="article-link">
+          <h3>Recent Fortinet Vulnerabilities exploited in superblack ransomware attacks</h3>
+        </a>
+        <p>Des vulnérabilités récentes Fortinet sont exploitées dans des attaques de ransomware « Superblack ». Vecteur d'entrée privilégié par des groupes criminels organisés.</p>
+      </div>
+
+      <div class="watch-card">
+        <div class="tag-row">
+          <span class="tag">Patch</span>
+          <td><span class="tag" style="padding:.15rem .5rem;font-size:.73rem;background:rgba(232,93,4,.15);border-color:rgba(232,93,4,.3);color:var(--orange-light)">Important</span></td>
+          <span class="date-badge">14/04/2025</span>
+        </div>
+        <a href="https://www.it-connect.fr/fortinet-faille-critique-fortiswitch-changer-le-mot-de-passe-admin-a-distance-cve-2024-48887/" target="_blank" rel="noopener" class="article-link">
+          <h3>Fortinet : cette faille critique dans FortiSwitch permet de changer le MDP admin à distance</h3>
+        </a>
+        <p>Vulnérabilité permettant de modifier le mot de passe administrateur d'un FortiSwitch à distance sans authentification. Patch critique disponible.</p>
+      </div>
+
+      <div class="watch-card">
+        <div class="tag-row">
+          <span class="tag">Incident</span>
+          <td><span class="tag" style="padding:.15rem .5rem;font-size:.73rem;background:rgba(232,93,4,.15);border-color:rgba(232,93,4,.3);color:var(--orange-light)">Important</span></td>
+          <span class="date-badge">14/04/2025</span>
+        </div>
+        <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2025-ALE-006/" target="_blank" rel="noopener" class="article-link">
+          <h3>CERT-FR – De nombreux firewalls Fortinet compromis en France malgré les correctifs</h3>
+        </a>
+        <p>Malgré les correctifs publiés, des firewalls FortiGate restent compromis en France via un lien symbolique déposé sur le système de fichiers SSL VPN lors d'une compromission antérieure.</p>
+      </div>
+
+      <div class="watch-card">
+        <div class="tag-row">
+          <span class="tag">Incident</span>
+          <span class="date-badge">18/04/2025</span>
+        </div>
+        <a href="https://www.it-connect.fr/plus-de-17-000-firewalls-fortinet-compromis-par-la-porte-derobee-symlink/" target="_blank" rel="noopener" class="article-link">
+          <h3>Plus de 17 000 firewalls Fortinet compromis par la porte dérobée symlink</h3>
+        </a>
+        <p>Plus de 17 000 équipements FortiGate compromis à l'échelle mondiale via la technique du lien symbolique permettant un accès lecture seule persistant au système de fichiers.</p>
+      </div>
+
+      <div class="watch-card">
+        <div class="tag-row">
+          <span class="tag">Patch</span>
+          <span class="date-badge">24/04/2025</span>
+        </div>
+        <a href="https://www.it-connect.fr/fortinet-annonce-la-fin-du-support-vpn-ssl-dans-fortios-7-6-3/" target="_blank" rel="noopener" class="article-link">
+          <h3>Fortinet annonce la fin du support VPN SSL dans FortiOS 7.6.3</h3>
+        </a>
+        <p>Fortinet met fin au support du VPN SSL dans FortiOS 7.6.3, orientant les clients vers des alternatives plus sécurisées comme ZTNA.</p>
+      </div>
+
+      <div class="watch-card">
+        <div class="tag-row">
+          <span class="tag">Incident</span>
+          <span class="date-badge">15/05/2025</span>
+        </div>
+        <a href="https://www.it-connect.fr/faille-zero-day-fortinet-les-instances-fortivoice-ciblees-par-des-attaques/" target="_blank" rel="noopener" class="article-link">
+          <h3>Faille zero-day Fortinet : les instances FortiVoice ciblées par des attaques</h3>
+        </a>
+        <p>Une faille zero-day cible les instances FortiVoice, permettant l'exécution de code à distance. Exploitation active confirmée par Fortinet.</p>
+      </div>
+
+      <div class="watch-card">
+        <div class="tag-row">
+          <span class="tag">Incident</span>
+          <span class="date-badge">15/06/2025</span>
+        </div>
+        <a href="https://www.securityweek.com/critical-fortinet-flaws-now-exploited-in-qilin-ransomware-attacks/" target="_blank" rel="noopener" class="article-link">
+          <h3>Critical Fortinet flaws now exploited in Qilin ransomware attacks</h3>
+        </a>
+        <p>Des vulnérabilités critiques Fortinet sont désormais exploitées dans les attaques du ransomware Qilin, ciblant principalement les secteurs de la santé et de l'éducation.</p>
+      </div>
+
+      <div class="watch-card">
+        <div class="tag-row">
+          <span class="tag">IA</span>
+          <span class="date-badge">05/11/2025</span>
+        </div>
+        <a href="https://www.fortinet.com/corporate/about-us/newsroom/press-releases/2025/fortinet-launches-secure-ai-data-center-solution-to-protect-models-data-and-infrastructure-at-scale" target="_blank" rel="noopener" class="article-link">
+          <h3>Fortinet Launches Secure AI Data Center Solution to Protect Models, Data, and Infrastructure at Scale</h3>
+        </a>
+        <p>Fortinet lance une solution complète de sécurité pour les datacenters IA, protégeant les modèles, les données et les infrastructures à grande échelle.</p>
+      </div>
+
+      <div class="watch-card">
+        <div class="tag-row">
+          <span class="tag">Incident</span>
+          <span class="date-badge">22/01/2026</span>
+        </div>
+        <a href="https://www.fortinet.com/blog/psirt-blogs/analysis-of-sso-abuse-on-fortios" target="_blank" rel="noopener" class="article-link">
+          <h3>Des firewalls FortiGate piratés malgré l'installation des derniers patchs CVE-2025-59718</h3>
+        </a>
+        <p>Analyse d'un abus SSO sur FortiOS : malgré les derniers correctifs, des équipements restent compromis via une technique d'abus du mécanisme Single Sign-On.</p>
+      </div>
+
+      <div class="watch-card">
+        <div class="tag-row">
+          <span class="tag">Mon choix</span>
+        </div>
         <h3>Pourquoi Fortinet ?</h3>
-        <p>J'ai choisi ce sujet car LDLC est en partenariat avec Fortinet, j'ai donc suivis l'actualité des firewalls, leurs failles et les cibles des hackers. Cette veille m'a aussi sensibilisé à l'usage de l'IA en cybersécurité, aux nouvelles méthodes de piratage, ainsi qu'à la place croissante de l'IA dans notre quotidien et à la confiance aveugle que nous lui accordons.</p>
+        <p>J'ai choisi ce sujet car LDLC est en partenariat avec Fortinet, j'ai donc suivi l'actualité des firewalls, leurs failles et les cibles des hackers. Cette veille m'a aussi sensibilisé à l'usage de l'IA en cybersécurité, aux nouvelles méthodes de piratage, ainsi qu'à la place croissante de l'IA dans notre quotidien et à la confiance aveugle que nous lui accordons.</p>
       </div>
+
     </div>
   </div>
 
   <!-- TICKER -->
   <div class="ticker-wrap">
     <div class="ticker">
-      <span class="ticker-item"><span>🔴</span>CVE Fortinet – Zero-Day contournement authentification</span>
-      <span class="ticker-item"><span>🔵</span>FortiGate NGFW – proprietary chip & FortiOS</span>
+      <span class="ticker-item"><span>🔴</span>CVE-2024-55591 – Zero-Day contournement authentification FortiOS</span>
+      <span class="ticker-item"><span>🔵</span>FortiGate NGFW – puce propriétaire & FortiOS</span>
       <span class="ticker-item"><span>🟢</span>FortiDLP – premier produit DLP autonome pour endpoints</span>
-      <span class="ticker-item"><span>🟡</span>Firewalls Fortinet compromis en France – lien symbolique SSL VPN</span>
-      <span class="ticker-item"><span>🔴</span>Fortiswitch – faille MDP Admin modification à distance</span>
-      <span class="ticker-item"><span>🔵</span>FortiGuard – IA intégrée dans la détection de menaces</span>
+      <span class="ticker-item"><span>🟡</span>17 000+ firewalls Fortinet compromis – lien symbolique SSL VPN</span>
+      <span class="ticker-item"><span>🔴</span>CVE-2024-48887 – Fortiswitch MDP Admin modifiable à distance</span>
+      <span class="ticker-item"><span>🔵</span>FortiGuard & FortiAnalyzer – IA intégrée dans la détection de menaces</span>
       <span class="ticker-item"><span>🟢</span>FortiAI – contextualisation activité employés en temps réel</span>
-      <span class="ticker-item"><span>🟡</span>CERT-FR – alerte firewalls Fortigate affectés en France</span>
-      <span class="ticker-item"><span>🔴</span>CVE Fortinet – Zero-Day contournement authentification</span>
-      <span class="ticker-item"><span>🔵</span>FortiGate NGFW – proprietary chip & FortiOS</span>
+      <span class="ticker-item"><span>🟡</span>CERT-FR – firewalls Fortigate compromis en France malgré les correctifs</span>
+      <span class="ticker-item"><span>🔴</span>Superblack & Qilin ransomware – exploitent des failles Fortinet critiques</span>
+      <span class="ticker-item"><span>🔵</span>FortiOS 7.6.3 – Fin du support VPN SSL, migration vers ZTNA</span>
+      <span class="ticker-item"><span>🟢</span>Fortinet Secure AI Data Center – protection des modèles IA à grande échelle</span>
+      <span class="ticker-item"><span>🔴</span>CVE-2024-55591 – Zero-Day contournement authentification FortiOS</span>
+      <span class="ticker-item"><span>🔵</span>FortiGate NGFW – puce propriétaire & FortiOS</span>
       <span class="ticker-item"><span>🟢</span>FortiDLP – premier produit DLP autonome pour endpoints</span>
-      <span class="ticker-item"><span>🟡</span>Firewalls Fortinet compromis en France – lien symbolique SSL VPN</span>
-      <span class="ticker-item"><span>🔴</span>Fortiswitch – faille MDP Admin modification à distance</span>
-      <span class="ticker-item"><span>🔵</span>FortiGuard – IA intégrée dans la détection de menaces</span>
+      <span class="ticker-item"><span>🟡</span>17 000+ firewalls Fortinet compromis – lien symbolique SSL VPN</span>
+      <span class="ticker-item"><span>🔴</span>CVE-2024-48887 – Fortiswitch MDP Admin modifiable à distance</span>
+      <span class="ticker-item"><span>🔵</span>FortiGuard & FortiAnalyzer – IA intégrée dans la détection de menaces</span>
       <span class="ticker-item"><span>🟢</span>FortiAI – contextualisation activité employés en temps réel</span>
-      <span class="ticker-item"><span>🟡</span>CERT-FR – alerte firewalls Fortigate affectés en France</span>
+      <span class="ticker-item"><span>🟡</span>CERT-FR – firewalls Fortigate compromis en France malgré les correctifs</span>
+      <span class="ticker-item"><span>🔴</span>Superblack & Qilin ransomware – exploitent des failles Fortinet critiques</span>
+      <span class="ticker-item"><span>🔵</span>FortiOS 7.6.3 – Fin du support VPN SSL, migration vers ZTNA</span>
+      <span class="ticker-item"><span>🟢</span>Fortinet Secure AI Data Center – protection des modèles IA à grande échelle</span>
     </div>
   </div>
 
-  <div style="padding:2rem 2rem 1rem;max-width:1100px;margin:0 auto">
-    <h2 class="sec-title">Articles récents</h2>
+  <div style="padding:2rem 2rem 3rem;max-width:1100px;margin:0 auto">
+    <h2 class="sec-title">Tous les articles</h2>
     <table class="vlan" style="margin-top:1rem">
-      <thead><tr><th>Date</th><th>Titre</th><th>Source</th><th>Catégorie</th></tr></thead>
+      <thead>
+        <tr>
+          <th style="width:110px">Date</th>
+          <th>Titre</th>
+          <th style="width:150px">Source</th>
+          <th style="width:110px">Catégorie</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td>Avril 2025</td><td>Firewalls Fortinet compromis en France malgré les correctifs</td><td>CERT-FR / IT-CONNECT</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">Incident</span></td></tr>
-        <tr><td>2025</td><td>Fortinet lance FortiDLP – DLP autonome pour endpoints</td><td>Forti DLP</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">Produit</span></td></tr>
-        <tr><td>2025</td><td>CVE Zero-Day – Contournement authentification Fortinet</td><td>Fortinet</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">Patch</span></td></tr>
-        <tr><td>2025</td><td>Faille Fortiswitch – Modification MDP Admin à distance</td><td>Fortinet</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">Patch</span></td></tr>
-        <tr><td>2024–2025</td><td>FortiAI – Détection de menaces et résumés incidents</td><td>Fortinet</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">IA</span></td></tr>
-        <tr><td>2024</td><td>FortiGate NGFW – puce propriétaire et performances</td><td>Fortinet</td><td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.75rem">Firewall</span></td></tr>
+        <tr>
+          <td>02/05/2024</td>
+          <td><a href="https://www.fortinet.com/fr/corporate/about-us/newsroom/press-releases/2024/fortinet-announces-industrys-first-generative-ai-iot-security-assistant-new-genai-capabilities-for-network-security-operations" target="_blank" rel="noopener">Fortinet dévoile le premier assistant de sécurité dédié à l'IoT, optimisé par IA générative</a></td>
+          <td>Fortinet</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">IA</span></td>
+        </tr>
+        <tr>
+          <td>14/06/2024</td>
+          <td><a href="https://www.it-connect.fr/fortinet-fuite-de-donnees-440-go-de-donnees-sharepoint/" target="_blank" rel="noopener">Fortinet : un pirate a volé 440 Go de données depuis SharePoint !</a></td>
+          <td>IT-Connect</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">Incident</span></td>
+        </tr>
+        <tr>
+          <td>25/10/2024</td>
+          <td><a href="https://www.it-connect.fr/fortinet-patchez-fortimanager-faille-zero-day-cve-2024-47575/" target="_blank" rel="noopener">Fortinet : patchez FortiManager dès maintenant pour vous protéger d'une faille zero-day (CVE-2024-47575)</a></td>
+          <td>IT-Connect</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">Patch</span></td>
+        </tr>
+        <tr style="background:rgba(255,100,100,.05)">
+          <td>25/10/2024</td>
+          <td><a href="https://www.it-connect.fr/fortinet-faille-fortijump-exploitee-depuis-juin-2024/" target="_blank" rel="noopener">Fortinet : la faille de sécurité FortiJump est exploitée par les pirates depuis juin 2024 !</a></td>
+          <td>IT-Connect</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem;background:rgba(232,93,4,.15);border-color:rgba(232,93,4,.3);color:var(--orange-light)">Important</span></td>
+        </tr>
+        <tr>
+          <td>04/11/2024</td>
+          <td><a href="https://www.lemond.informatique.fr/actualites/lire-fortinet-lance-son-premier-dlp-autonome-pour-les-points-d-extremite-95149.html" target="_blank" rel="noopener">Fortinet lance son premier produit DLP autonome pour les points d'extrémité</a></td>
+          <td>Le Monde Informatique</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">DLP</span></td>
+        </tr>
+        <tr style="background:rgba(255,100,100,.05)">
+          <td>14/01/2025</td>
+          <td><a href="https://www.it-connect.fr/fortinet-faille-critique-contourner-lauthentification-cve-2024-55591/" target="_blank" rel="noopener">Des firewalls Fortinet piratés avec cette faille critique permettant de contourner l'authentification !</a></td>
+          <td>IT-Connect</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem;background:rgba(232,93,4,.15);border-color:rgba(232,93,4,.3);color:var(--orange-light)">Important</span></td>
+        </tr>
+        <tr style="background:rgba(255,100,100,.05)">
+          <td>12/02/2025</td>
+          <td><a href="https://ccb.belgium.be/advisories/warning-fortinet-patched-multiple-vulnerabilities-one-vulnerability-already-actively" target="_blank" rel="noopener">Fortinet a corrigé plusieurs vulnérabilités, l'une d'elles est déjà exploitée, passez le correctif immédiatement.</a></td>
+          <td>CCB Belgium</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem;background:rgba(232,93,4,.15);border-color:rgba(232,93,4,.3);color:var(--orange-light)">Important</span></td>
+        </tr>
+        <tr>
+          <td>24/02/2025</td>
+          <td><a href="https://www.lemondeinformatique.fr/actualites/lire-avec-l-ia-fortianalyzer-muscle-la-detection-des-menaces-96132.html" target="_blank" rel="noopener">Avec l'IA FortiAnalyzer muscle la détection des menaces</a></td>
+          <td>Le Monde Informatique</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">IA</span></td>
+        </tr>
+        <tr>
+          <td>14/03/2025</td>
+          <td><a href="https://www.securityweek.com/recent-fortinet-vulnerabilities-exploited-in-superblack-ransomware-attacks/" target="_blank" rel="noopener">Recent Fortinet Vulnerabilities exploited in superblack ransomware attacks</a></td>
+          <td>Security Week</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">Incident</span></td>
+        </tr>
+        <tr style="background:rgba(255,100,100,.05)">
+          <td>14/04/2025</td>
+          <td><a href="https://www.it-connect.fr/fortinet-faille-critique-fortiswitch-changer-le-mot-de-passe-admin-a-distance-cve-2024-48887/" target="_blank" rel="noopener">Fortinet : cette faille critique dans FortiSwitch permet de changer le MDP admin à distance</a></td>
+          <td>IT-Connect</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem;background:rgba(232,93,4,.15);border-color:rgba(232,93,4,.3);color:var(--orange-light)">Important</span></td>
+        </tr>
+        <tr style="background:rgba(255,100,100,.05)">
+          <td>14/04/2025</td>
+          <td><a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2025-ALE-006/" target="_blank" rel="noopener">CERT-FR – De nombreux firewalls Fortinet compromis en France malgré les correctifs</a></td>
+          <td>CERT-FR</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem;background:rgba(232,93,4,.15);border-color:rgba(232,93,4,.3);color:var(--orange-light)">Important</span></td>
+        </tr>
+        <tr>
+          <td>18/04/2025</td>
+          <td><a href="https://www.it-connect.fr/plus-de-17-000-firewalls-fortinet-compromis-par-la-porte-derobee-symlink/" target="_blank" rel="noopener">Plus de 17 000 firewalls Fortinet compromis par la porte dérobée symlink</a></td>
+          <td>IT-Connect</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">Incident</span></td>
+        </tr>
+        <tr>
+          <td>24/04/2025</td>
+          <td><a href="https://www.it-connect.fr/fortinet-annonce-la-fin-du-support-vpn-ssl-dans-fortios-7-6-3/" target="_blank" rel="noopener">Fortinet annonce la fin du support VPN SSL dans FortiOS 7.6.3</a></td>
+          <td>IT-Connect</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">Patch</span></td>
+        </tr>
+        <tr>
+          <td>15/05/2025</td>
+          <td><a href="https://www.it-connect.fr/faille-zero-day-fortinet-les-instances-fortivoice-ciblees-par-des-attaques/" target="_blank" rel="noopener">Faille zero-day Fortinet : les instances FortiVoice ciblées par des attaques</a></td>
+          <td>IT-Connect</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">Patch</span></td>
+        </tr>
+        <tr>
+          <td>15/06/2025</td>
+          <td><a href="https://www.securityweek.com/critical-fortinet-flaws-now-exploited-in-qilin-ransomware-attacks/" target="_blank" rel="noopener">Critical Fortinet flaws now exploited in Qilin ransomware attacks</a></td>
+          <td>Security Week</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">Incident</span></td>
+        </tr>
+        <tr>
+          <td>05/11/2025</td>
+          <td><a href="https://www.fortinet.com/corporate/about-us/newsroom/press-releases/2025/fortinet-launches-secure-ai-data-center-solution-to-protect-models-data-and-infrastructure-at-scale" target="_blank" rel="noopener">Fortinet Launches Secure AI Data Center Solution to Protect Models, Data, and Infrastructure at Scale</a></td>
+          <td>Fortinet</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">IA</span></td>
+        </tr>
+        <tr>
+          <td>22/01/2026</td>
+          <td><a href="https://www.fortinet.com/blog/psirt-blogs/analysis-of-sso-abuse-on-fortios" target="_blank" rel="noopener">Des firewalls FortiGate piratés malgré l'installation des derniers patchs CVE-2025-59718</a></td>
+          <td>Fortinet PSIRT</td>
+          <td><span class="infra-badge" style="padding:.15rem .5rem;font-size:.73rem">Incident</span></td>
+        </tr>
       </tbody>
     </table>
   </div>
