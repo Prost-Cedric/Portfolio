@@ -3,7 +3,7 @@ var tools=[
   {name:'CrystalDiskInfo',url:'https://crystalmark.info/en/software/crystaldiskinfo/',text:"Logiciel d'analyse de l'état de santé des disques durs et SSD via les données S.M.A.R.T. Détecte les disques défaillants avant qu'ils ne tombent en panne."},
   {name:'Cinebench',url:'https://www.maxon.net/cinebench',text:'Outil de benchmark du processeur (mono et multicoeur) basé sur le moteur de rendu Cinema 4D. Permet de comparer les performances CPU et de détecter les throttlings.'},
   {name:'OCCT',url:'https://www.ocbase.com/',text:"Logiciel de test de stabilité du système. Permet de stress-tester le CPU, GPU et l'alimentation afin de détecter les problèmes thermiques et d'instabilité."},
-  {name:'Passmark Memtest',url:'https://www.passmark.com/products/memtest86/',text:'Outil de test mémoire permettant de vérifier la fiabilité et la stabilité des barrettes RAM. Détecte les erreurs mémoire physiques et les problèmes de compatibilité.'},
+  {name:'Passmark Memtest',url:'https://www.memtest86.com/',text:'Outil de test mémoire permettant de vérifier la fiabilité et la stabilité des barrettes RAM. Détecte les erreurs mémoire physiques et les problèmes de compatibilité.'},
   {name:'PC3000',url:'https://www.acelab.eu.com/pc3000-udma.html',text:'Outil professionnel de récupération de données et de diagnostic avancé pour disques HDD et SSD. Utilisé pour les cas complexes de pannes de stockage.'}
 ];
 
