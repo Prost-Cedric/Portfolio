@@ -116,6 +116,50 @@ table.vlan tr:hover td{background:rgba(0,188,212,.04)}
 .proc-link{display:inline-block;background:var(--cyan);color:#0a0e14;text-decoration:none;font-weight:600;font-size:.95rem;padding:.75rem 1.75rem;border-radius:20px;transition:all .2s ease;box-shadow:0 2px 12px rgba(0,188,212,0.2)}
 .proc-link:hover{background:var(--cyan-dark);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,188,212,0.35)}
 
+/* DOC PREVIEW CARDS (certifs & bulletins) */
+.doc-preview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1.25rem;margin:1rem 0 .5rem}
+.doc-preview-card{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:.6rem;transition:transform .2s}
+.doc-preview-card:hover{transform:translateY(-4px)}
+.doc-preview-thumb{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--border-bright);aspect-ratio:3/4;display:flex;flex-direction:column;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.doc-preview-card:hover .doc-preview-thumb{border-color:var(--cyan);box-shadow:0 4px 20px rgba(0,188,212,.18)}
+.doc-preview-overlay{position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;color:#fff;font-size:.8rem;font-weight:600;opacity:0;transition:opacity .2s}
+.doc-preview-card:hover .doc-preview-overlay{opacity:1}
+.doc-preview-label{font-size:.78rem;color:var(--text-muted);text-align:center;line-height:1.4;padding:0 .25rem}
+
+/* BULLETIN THUMB */
+.bulletin-thumb{background:#f8f8f8}
+.thumb-header{background:#1a3a5c;padding:.5rem .75rem;display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.thumb-logo{background:#fff;color:#1a3a5c;font-size:.6rem;font-weight:800;padding:.2rem .35rem;border-radius:3px;flex-shrink:0}
+.thumb-cfa{color:rgba(255,255,255,.85);font-size:.55rem;font-weight:600;letter-spacing:.3px}
+.thumb-body{padding:.5rem .75rem;flex:1;display:flex;flex-direction:column;gap:.25rem}
+.thumb-title{font-size:.7rem;font-weight:700;color:#1a3a5c}
+.thumb-sub{font-size:.58rem;color:#555}
+.thumb-grades{margin-top:.3rem;display:flex;flex-direction:column;gap:.15rem}
+.thumb-grade-row{display:flex;justify-content:space-between;font-size:.58rem;color:#444}
+.grade-val{font-weight:700;color:#1a3a5c}
+.grade-val.good{color:#2a7a2a}
+.thumb-avg{margin-top:.3rem;font-size:.6rem;color:#333;border-top:1px solid #ddd;padding-top:.25rem}
+
+/* CISCO THUMB */
+.cisco-thumb{background:#fff}
+.cisco-logo-area{padding:.5rem .75rem .3rem;border-bottom:1px solid #eee;flex-shrink:0}
+.cisco-logo{color:#049fd9;font-size:.85rem;font-weight:900;letter-spacing:1px}
+.cisco-academy{font-size:.52rem;color:#666;font-weight:500}
+.cisco-body{padding:.5rem .75rem;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.2rem}
+.cisco-awarded{font-size:.52rem;color:#666;font-style:italic}
+.cisco-name{font-size:.72rem;font-weight:700;color:#049fd9}
+.cisco-course{font-size:.62rem;font-weight:600;color:#049fd9;line-height:1.35}
+.cisco-date{margin-top:auto;font-size:.55rem;color:#888;padding-top:.3rem;border-top:1px solid #eee;width:100%}
+
+@media(max-width:640px){.doc-preview-grid{grid-template-columns:repeat(2,1fr)}}
+
+@media(max-width:640px){
+  .doc-grid{grid-template-columns:1fr}
+  nav{gap:1rem;padding:0 1rem}
+  .nav-tabs{gap:0}
+  .tab-link{padding:.5rem .7rem;font-size:.75rem}
+  .content{padding:2rem 1rem}
+}
 /* RESPONSIVE */
 @media(max-width:640px){
   .doc-grid{grid-template-columns:1fr}
